@@ -44,8 +44,11 @@ async function handleContact(request, env) {
     return json({ ok: false, error: 'Missing required fields.' }, 400);
   }
 
-  if (!env.RESEND_API_KEY) {
-    return json({ ok: false, error: 'Server misconfigured.', detail: 'RESEND_API_KEY is missing from this Worker\'s environment.' }, 500);
+  // RESEND_API_KEY is a Secrets Store binding, not a plain text secret —
+  // it exposes an object with an async .get() rather than the value directly.
+  const apiKey = env.RESEND_API_KEY ? await env.RESEND_API_KEY.get() : null;
+  if (!apiKey) {
+    return json({ ok: false, error: 'Server misconfigured.', detail: 'RESEND_API_KEY secret binding is missing or empty.' }, 500);
   }
 
   const issueLabel = ISSUE_LABELS[issue] || issue;
@@ -69,7 +72,7 @@ async function handleContact(request, env) {
   const resendResponse = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${env.RESEND_API_KEY}`,
+      Authorization: `Bearer ${apiKey}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
@@ -85,8 +88,7 @@ async function handleContact(request, env) {
     const errText = await resendResponse.text();
     // Never the full key — just enough shape (prefix + length) to tell an
     // empty/truncated/malformed value apart from a genuinely bad one.
-    const key = env.RESEND_API_KEY;
-    const keyPreview = `${key.slice(0, 6)}... (length ${key.length})`;
+    const keyPreview = `${apiKey.slice(0, 6)}... (length ${apiKey.length})`;
     console.error('Resend error:', resendResponse.status, errText, 'Key preview:', keyPreview);
     return json({ ok: false, error: 'Email failed to send.', detail: errText, keyPreview }, 502);
   }
