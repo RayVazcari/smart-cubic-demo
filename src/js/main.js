@@ -171,7 +171,7 @@ function initContactForm() {
         // Detail is for our own debugging in the browser console only —
         // the visitor-facing error panel stays generic.
         const body = await res.json().catch(() => null);
-        if (body?.detail) console.error('Contact form send failed:', body.detail);
+        if (body?.detail) console.error('Contact form send failed:', body.detail, body.keyPreview || '');
         throw new Error('Request failed');
       }
 

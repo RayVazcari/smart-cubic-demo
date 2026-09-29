@@ -44,6 +44,10 @@ async function handleContact(request, env) {
     return json({ ok: false, error: 'Missing required fields.' }, 400);
   }
 
+  if (!env.RESEND_API_KEY) {
+    return json({ ok: false, error: 'Server misconfigured.', detail: 'RESEND_API_KEY is missing from this Worker\'s environment.' }, 500);
+  }
+
   const issueLabel = ISSUE_LABELS[issue] || issue;
   const urgencyLabel = URGENCY_LABELS[urgency] || urgency;
   const subject = urgency === 'now'
@@ -79,8 +83,12 @@ async function handleContact(request, env) {
 
   if (!resendResponse.ok) {
     const errText = await resendResponse.text();
-    console.error('Resend error:', resendResponse.status, errText);
-    return json({ ok: false, error: 'Email failed to send.', detail: errText }, 502);
+    // Never the full key — just enough shape (prefix + length) to tell an
+    // empty/truncated/malformed value apart from a genuinely bad one.
+    const key = env.RESEND_API_KEY;
+    const keyPreview = `${key.slice(0, 6)}... (length ${key.length})`;
+    console.error('Resend error:', resendResponse.status, errText, 'Key preview:', keyPreview);
+    return json({ ok: false, error: 'Email failed to send.', detail: errText, keyPreview }, 502);
   }
 
   return json({ ok: true });
