@@ -28,8 +28,8 @@
   --color-orange-light: #FF7F4D;
   --color-alert: #DC2626;
 
-  --color-paper: #F7F9FC;
-  --color-paper-dim: #EEF2F8;
+  --color-paper: #F2F4F9;
+  --color-paper-dim: #E7EBF3;
   --color-line: #E2E8F0;
   --color-muted: #64748B;
   --color-body: #1E293B;
@@ -222,6 +222,10 @@ p { margin: 0; }
 .service-icon-sm { width: 44px; height: 44px; border-radius: 8px; flex-shrink: 0; }
 .service-icon-sm svg { width: 20px; height: 20px; }
 .service-icon--orange { background: rgba(234, 88, 12, 0.1); color: var(--color-orange); }
+/* Compound selector (not a bare modifier) so this reliably beats .service-icon's own
+   rule regardless of source order — for an icon sitting directly on a dark section
+   background, not inside a white .card (which keeps its normal tint either way). */
+.service-icon.service-icon--on-dark { background: rgba(255,255,255,0.1); color: var(--color-cyan-light); }
 .service-icon--cyan { background: rgba(8, 145, 178, 0.1); color: var(--color-cyan); }
 .service-icon--green { background: rgba(63, 165, 53, 0.1); color: var(--color-division-restoration); }
 .service-icon--red { background: rgba(229, 52, 42, 0.1); color: var(--color-division-roofing); }
