@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="src/style.css?v=8" />
+  <link rel="stylesheet" href="src/style.css?v=9" />
   <script type="module" src="src/js/main.js"></script>
 </head>
 <body>
@@ -84,9 +84,13 @@
     <!-- ============ MAP + LIST ============ -->
     <section class="section">
       <div class="container">
-        <div class="reveal map-placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5S5 14.6 5 9.8a7 7 0 1 1 14 0c0 4.8-7 11.7-7 11.7Z"/><circle cx="12" cy="9.8" r="2.4"/></svg>
-          <p data-i18n="areas.map.note">Map placeholder — embed a live service-area map here once finalized.</p>
+        <div class="reveal map-embed">
+          <iframe
+            src="https://www.google.com/maps/d/u/3/embed?mid=1aqsClg8wEztu_qqBD7nKRzoRRKjSi7w&amp;ehbc=2E312F"
+            title="Cubic Smart Innovation LLC service area map"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
 
         <h2 class="h3 text-ink mt-6 reveal" data-i18n="areas.list.title">Cities &amp; Communities We Cover</h2>
