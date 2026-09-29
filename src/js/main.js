@@ -195,7 +195,7 @@ function initGlassSheen() {
   const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   if (!canHover) return;
 
-  document.querySelectorAll('.glass, .card').forEach((el) => {
+  document.querySelectorAll('.glass, .card, .chip').forEach((el) => {
     el.addEventListener('mousemove', (e) => {
       const rect = el.getBoundingClientRect();
       const px = (e.clientX - rect.left) / rect.width;
@@ -239,7 +239,7 @@ function initScrollParallax() {
     fields.forEach((el) => {
       const rect = el.getBoundingClientRect();
       const progress = rect.top / window.innerHeight;
-      el.style.setProperty('--scroll-shift', `${progress * -30}px`);
+      el.style.setProperty('--scroll-shift', `${progress * -140}px`);
     });
     ticking = false;
   }
