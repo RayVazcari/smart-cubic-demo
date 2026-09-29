@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="src/style.css?v=6" />
+  <link rel="stylesheet" href="src/style.css?v=7" />
   <script type="module" src="src/js/main.js"></script>
 </head>
 <body>
@@ -70,8 +70,9 @@
 
   <main id="main">
     <!-- ============ PAGE HERO ============ -->
-    <section class="section-tight section-dark">
-      <div class="container text-center max-w-lead mx-auto">
+    <section class="section-tight section-dark" style="position:relative; overflow:hidden;">
+      <div class="hero-glow" style="background: radial-gradient(55% 60% at 85% 15%, var(--color-navy) 0%, transparent 70%); opacity:0.5;"></div>
+      <div class="container text-center max-w-lead mx-auto" style="position:relative;">
         <span class="eyebrow" data-i18n="about.hero.eyebrow">Our Story</span>
         <h1 class="h1 text-white mt-3" data-i18n="about.hero.title">Built by Someone Who's Run the Job Site, Not Just the Office</h1>
         <p class="eyebrow mt-2" style="justify-content:center;" data-i18n="about.hero.byline">Ray Rizo — Founder</p>
@@ -79,13 +80,40 @@
       </div>
     </section>
 
-    <!-- ============ STORY ============ -->
+    <!-- ============ STORY (TIMELINE) ============ -->
     <section class="section">
-      <div class="container max-w-lead mx-auto reveal">
-        <h2 class="h2" data-i18n="about.story.title">From Civil Engineering to Water Mitigation</h2>
-        <p class="lead mt-4" data-i18n="about.story.p1">Our founder has worked as a civil engineer and builder since 1992, with hands-on experience across construction, remodeling, and structural repair. A hands-on introduction to the mitigation trade — and a certification earned in Houston in 2024 — turned that construction background toward emergency water response.</p>
-        <p class="lead mt-3" data-i18n="about.story.p2">That experience showed a gap: San Antonio homeowners deserve the same technical rigor as major commercial jobs, delivered with the personal attention only a local, family-operated crew can give. Cubic Smart exists to close that gap, starting here at home.</p>
-        <p class="lead mt-3" data-i18n="about.story.p3">Today, our bilingual team brings that same engineering-first approach to every job — whether it's a single water leak or a full restoration — with direct communication in the language each family is most comfortable in.</p>
+      <div class="container">
+        <div class="reveal text-center max-w-content mx-auto">
+          <span class="eyebrow" data-i18n="about.story.eyebrow">Our Timeline</span>
+          <h2 class="h2 mt-2" data-i18n="about.story.title">From Civil Engineering to Water Mitigation</h2>
+        </div>
+
+        <div class="timeline mt-6" data-reveal-group>
+          <div class="timeline-item">
+            <div class="timeline-year">1992</div>
+            <div class="timeline-dot"></div>
+            <div class="timeline-body">
+              <h3 class="h3 text-ink" data-i18n="about.story.t1.title">Career Begins in Mexico</h3>
+              <p class="body-muted mt-2" data-i18n="about.story.t1.body">Ray Rizo starts working as a civil engineer and builder, with hands-on experience across construction, remodeling, and structural repair that spans decades.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-dot"></div>
+            <div class="timeline-body">
+              <h3 class="h3 text-ink" data-i18n="about.story.t2.title">IICRC Certification, Houston</h3>
+              <p class="body-muted mt-2" data-i18n="about.story.t2.body">A hands-on introduction to the mitigation trade turns that construction background toward emergency water response, formalized with a certification earned in Houston.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year" data-i18n="about.story.t3.year">Today</div>
+            <div class="timeline-dot"></div>
+            <div class="timeline-body">
+              <h3 class="h3 text-ink" data-i18n="about.story.t3.title">Cubic Smart Innovation LLC</h3>
+              <p class="body-muted mt-2" data-i18n="about.story.t3.body">San Antonio homeowners deserve the same technical rigor as major commercial jobs, delivered with the personal attention only a local, family-operated crew can give. Our bilingual team brings that engineering-first approach to every job — from a single water leak to a full restoration.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 

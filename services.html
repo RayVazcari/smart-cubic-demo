@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="src/style.css?v=6" />
+  <link rel="stylesheet" href="src/style.css?v=7" />
   <script type="module" src="src/js/main.js"></script>
 </head>
 <body>
@@ -70,8 +70,9 @@
 
   <main id="main">
     <!-- ============ PAGE HERO ============ -->
-    <section class="section-tight section-dark">
-      <div class="container text-center max-w-lead mx-auto">
+    <section class="section-tight section-dark" style="position:relative; overflow:hidden;">
+      <div class="hero-glow" style="background: radial-gradient(55% 60% at 15% 15%, var(--color-navy) 0%, transparent 70%); opacity:0.5;"></div>
+      <div class="container text-center max-w-lead mx-auto" style="position:relative;">
         <span class="eyebrow" data-i18n="services.hero.eyebrow">Our Services</span>
         <h1 class="h1 text-white mt-3" data-i18n="services.hero.title">Four Divisions, One Crew You Can Trust</h1>
         <p class="lead on-dark mt-3" data-i18n="services.hero.subtitle">Cubic Smart Innovation LLC covers construction, roofing, restoration, and water mitigation for homeowners and property managers across San Antonio, expanding soon to Austin, Houston &amp; Dallas.</p>
@@ -90,7 +91,7 @@
           </div>
         </div>
         <div class="grid grid-2" data-reveal-group>
-          <div id="water" class="card cluster gap-md" style="align-items:flex-start;">
+          <div id="water" class="card card--accent cluster gap-md" style="align-items:flex-start; --division-accent: var(--color-division-water);">
             <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s6.5 7.2 6.5 12a6.5 6.5 0 1 1-13 0c0-4.8 6.5-12 6.5-12Z"/></svg></span>
             <div style="flex:1;">
               <h2 class="h3 text-ink" data-i18n="services.water.title">Water Damage Mitigation</h2>
@@ -98,7 +99,7 @@
               <a href="contact.html" class="btn btn-outline-dark btn-sm mt-3" data-i18n="services.learnMore">Request This Service</a>
             </div>
           </div>
-          <div id="storm" class="card cluster gap-md" style="align-items:flex-start;">
+          <div id="storm" class="card card--accent cluster gap-md" style="align-items:flex-start; --division-accent: var(--color-division-water);">
             <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 17a4 4 0 1 1 1-7.9A5.5 5.5 0 0 1 18 11a3.5 3.5 0 0 1-.5 6.9"/><path d="M13 13.5 10.5 17h3L11 20.5"/></svg></span>
             <div style="flex:1;">
               <h2 class="h3 text-ink" data-i18n="services.storm.title">Storm &amp; Flood Damage Response</h2>
@@ -116,7 +117,7 @@
           </div>
         </div>
         <div class="grid grid-2" data-reveal-group>
-          <div id="restoration" class="card cluster gap-md" style="align-items:flex-start;">
+          <div id="restoration" class="card card--accent cluster gap-md" style="align-items:flex-start; --division-accent: var(--color-division-restoration);">
             <span class="service-icon service-icon--green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5h8l4 4v13h-12v-17Z"/><path d="M14.5 3.5V8h4M9 12h6M9 15.5h6"/></svg></span>
             <div style="flex:1;">
               <h2 class="h3 text-ink" data-i18n="services.restoration.title">Restoration &amp; Reconstruction</h2>
@@ -124,7 +125,7 @@
               <a href="contact.html" class="btn btn-outline-dark btn-sm mt-3" data-i18n="services.learnMore">Request This Service</a>
             </div>
           </div>
-          <div id="fire" class="card cluster gap-md" style="align-items:flex-start;">
+          <div id="fire" class="card card--accent cluster gap-md" style="align-items:flex-start; --division-accent: var(--color-division-restoration);">
             <span class="service-icon service-icon--green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s4.5 4 4.5 8.5a4.5 4.5 0 0 1-9 0c0-1 .3-1.9.8-2.7C9 9 9.7 10 9.7 10S9 6 12 2Z"/><path d="M9.5 14.5a2.5 2.5 0 0 0 5 0c0-1.4-1.2-2.6-2.5-4-1.3 1.4-2.5 2.6-2.5 4Z"/></svg></span>
             <div style="flex:1;">
               <h2 class="h3 text-ink" data-i18n="services.fire.title">Minor Fire Damage Repair</h2>
@@ -142,7 +143,7 @@
           </div>
         </div>
         <div class="grid grid-2" data-reveal-group>
-          <div id="remodel" class="card cluster gap-md" style="align-items:flex-start;">
+          <div id="remodel" class="card card--accent cluster gap-md" style="align-items:flex-start; --division-accent: var(--color-division-construction);">
             <span class="service-icon service-icon--orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="9.5" width="15" height="10" rx="1"/><path d="M8 9.5V7a4 4 0 0 1 8 0v2.5"/></svg></span>
             <div style="flex:1;">
               <h2 class="h3 text-ink" data-i18n="services.remodel.title">Bathroom Remodeling</h2>
@@ -150,7 +151,7 @@
               <a href="contact.html" class="btn btn-outline-dark btn-sm mt-3" data-i18n="services.learnMore">Request This Service</a>
             </div>
           </div>
-          <div id="concrete" class="card cluster gap-md" style="align-items:flex-start;">
+          <div id="concrete" class="card card--accent cluster gap-md" style="align-items:flex-start; --division-accent: var(--color-division-construction);">
             <span class="service-icon service-icon--orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9.5L12 5l8 4.5V19H4Z"/><path d="M9 19v-6h6v6"/></svg></span>
             <div style="flex:1;">
               <h2 class="h3 text-ink" data-i18n="services.concrete.title">Concrete &amp; Structural Repair</h2>
@@ -168,7 +169,7 @@
           </div>
         </div>
         <div class="grid grid-2" data-reveal-group>
-          <div id="roofing" class="card cluster gap-md" style="align-items:flex-start;">
+          <div id="roofing" class="card card--accent cluster gap-md" style="align-items:flex-start; --division-accent: var(--color-division-roofing);">
             <span class="service-icon service-icon--red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 12 12 4l8.5 8M6 10.5V19h12v-8.5" /></svg></span>
             <div style="flex:1;">
               <h2 class="h3 text-ink" data-i18n="services.roofing.title">Roof Repair &amp; Storm Assessment</h2>

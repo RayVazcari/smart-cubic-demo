@@ -42,6 +42,7 @@ export const translations = {
     'home.services.title': 'Restoration Services Built for Emergencies',
     'home.services.subtitle': 'From the first phone call to the final walkthrough, one crew handles mitigation and rebuild — no handoffs, no guesswork.',
     'home.services.linkAll': 'View All Services',
+    'services.learnMoreShort': 'Learn More',
 
     'home.why.eyebrow': 'Why Cubic Smart',
     'home.why.title': 'The Crew You Call Once and Trust From Then On',
@@ -117,10 +118,15 @@ export const translations = {
     'about.hero.byline': 'Ray Rizo — Founder',
     'about.hero.subtitle': 'Cubic Smart was founded on a simple standard: treat every property like it’s your own family’s home.',
 
+    'about.story.eyebrow': 'Our Timeline',
     'about.story.title': 'From Civil Engineering to Water Mitigation',
-    'about.story.p1': 'Ray Rizo has worked as a civil engineer and builder since 1992, with hands-on experience across construction, remodeling, and structural repair. A hands-on introduction to the mitigation trade — and a certification earned in Houston in 2024 — turned that construction background toward emergency water response.',
-    'about.story.p2': 'That experience showed a gap: San Antonio homeowners deserve the same technical rigor as major commercial jobs, delivered with the personal attention only a local, family-operated crew can give. Cubic Smart exists to close that gap, starting here at home.',
-    'about.story.p3': 'Today, our bilingual team brings that same engineering-first approach to every job — whether it’s a single water leak or a full restoration — with direct communication in the language each family is most comfortable in.',
+    'about.story.t1.title': 'Career Begins in Mexico',
+    'about.story.t1.body': 'Ray Rizo starts working as a civil engineer and builder, with hands-on experience across construction, remodeling, and structural repair that spans decades.',
+    'about.story.t2.title': 'IICRC Certification, Houston',
+    'about.story.t2.body': 'A hands-on introduction to the mitigation trade turns that construction background toward emergency water response, formalized with a certification earned in Houston.',
+    'about.story.t3.year': 'Today',
+    'about.story.t3.title': 'Cubic Smart Innovation LLC',
+    'about.story.t3.body': 'San Antonio homeowners deserve the same technical rigor as major commercial jobs, delivered with the personal attention only a local, family-operated crew can give. Our bilingual team brings that engineering-first approach to every job — from a single water leak to a full restoration.',
 
     'about.values.eyebrow': 'What We Stand For',
     'about.values.title': 'The Standards Every Job Is Held To',
@@ -237,6 +243,7 @@ export const translations = {
     'home.services.title': 'Servicios de Restauración para Cada Emergencia',
     'home.services.subtitle': 'Desde la primera llamada hasta la inspección final, un mismo equipo maneja la mitigación y la reconstrucción — sin cambios de personal ni adivinanzas.',
     'home.services.linkAll': 'Ver Todos los Servicios',
+    'services.learnMoreShort': 'Más Información',
 
     'home.why.eyebrow': 'Por Qué Cubic Smart',
     'home.why.title': 'El Equipo Que Llamas Una Vez y en el Que Confías Desde Entonces',
@@ -312,10 +319,15 @@ export const translations = {
     'about.hero.byline': 'Ray Rizo — Fundador',
     'about.hero.subtitle': 'Cubic Smart se fundó con un estándar simple: tratar cada propiedad como si fuera la casa de tu propia familia.',
 
+    'about.story.eyebrow': 'Nuestra Trayectoria',
     'about.story.title': 'De la Ingeniería Civil a la Mitigación de Agua',
-    'about.story.p1': 'Ray Rizo ha trabajado como ingeniero civil y constructor desde 1992, con experiencia práctica en construcción, remodelación y reparación estructural. Un acercamiento práctico al oficio de la mitigación — y una certificación obtenida en Houston en 2024 — orientaron esa experiencia en construcción hacia la respuesta de emergencia por agua.',
-    'about.story.p2': 'Esa experiencia reveló un vacío: los propietarios de San Antonio merecen el mismo rigor técnico que los grandes proyectos comerciales, con la atención personal que solo un equipo local y familiar puede ofrecer. Cubic Smart existe para cerrar esa brecha, comenzando aquí en casa.',
-    'about.story.p3': 'Hoy, nuestro equipo bilingüe aplica ese mismo enfoque de ingeniería en cada trabajo — ya sea una sola fuga de agua o una restauración completa — con comunicación directa en el idioma con el que cada familia se sienta más cómoda.',
+    'about.story.t1.title': 'Comienza su Carrera en México',
+    'about.story.t1.body': 'Ray Rizo comienza a trabajar como ingeniero civil y constructor, con experiencia práctica en construcción, remodelación y reparación estructural que abarca décadas.',
+    'about.story.t2.title': 'Certificación IICRC, Houston',
+    'about.story.t2.body': 'Un acercamiento práctico al oficio de la mitigación orienta esa experiencia en construcción hacia la respuesta de emergencia por agua, formalizada con una certificación obtenida en Houston.',
+    'about.story.t3.year': 'Hoy',
+    'about.story.t3.title': 'Cubic Smart Innovation LLC',
+    'about.story.t3.body': 'Los propietarios de San Antonio merecen el mismo rigor técnico que los grandes proyectos comerciales, con la atención personal que solo un equipo local y familiar puede ofrecer. Nuestro equipo bilingüe aplica ese enfoque de ingeniería en cada trabajo — desde una sola fuga de agua hasta una restauración completa.',
 
     'about.values.eyebrow': 'Lo Que Representamos',
     'about.values.title': 'Los Estándares de Cada Trabajo',
