@@ -167,7 +167,13 @@ function initContactForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       });
-      if (!res.ok) throw new Error('Request failed');
+      if (!res.ok) {
+        // Detail is for our own debugging in the browser console only —
+        // the visitor-facing error panel stays generic.
+        const body = await res.json().catch(() => null);
+        if (body?.detail) console.error('Contact form send failed:', body.detail);
+        throw new Error('Request failed');
+      }
 
       form.classList.add('hidden');
       successPanel?.classList.remove('hidden');

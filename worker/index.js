@@ -70,16 +70,17 @@ async function handleContact(request, env) {
     },
     body: JSON.stringify({
       from: FROM_EMAIL,
-      to: TO_EMAIL,
-      reply_to: email || undefined,
+      to: [TO_EMAIL],
+      reply_to: email ? [email] : undefined,
       subject,
       html,
     }),
   });
 
   if (!resendResponse.ok) {
-    console.error('Resend error:', await resendResponse.text());
-    return json({ ok: false, error: 'Email failed to send.' }, 502);
+    const errText = await resendResponse.text();
+    console.error('Resend error:', resendResponse.status, errText);
+    return json({ ok: false, error: 'Email failed to send.', detail: errText }, 502);
   }
 
   return json({ ok: true });
