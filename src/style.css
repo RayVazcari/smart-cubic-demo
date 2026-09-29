@@ -257,6 +257,23 @@ p { margin: 0; }
 .top-bar-inner svg { width: 0.875rem; height: 0.875rem; }
 
 .nav-row { display: flex; align-items: center; justify-content: space-between; padding-block: 1rem; }
+.brand--center { justify-self: center; }
+/* Compound selectors (.brand-mark.brand-mark--center, not bare .brand-mark--center) —
+   the element also carries the plain .brand-mark class for base sizing/reset, and a
+   bare single-class modifier has the same specificity as that base rule, so it can
+   lose to it depending on source order. Chaining both classes guarantees this wins. */
+.brand-mark.brand-mark--center { width: auto; height: 40px; background: none; border: none; }
+.brand-mark.brand-mark--center img { width: auto; height: 100%; object-fit: contain; }
+/* Centered-logo header (desktop only) — a true 3-column grid keeps the logo
+   visually centered regardless of the left/right nav groups being different
+   widths, the way a flex space-between never quite can. Mobile/tablet keep
+   the simpler logo-left flex row above (unchanged, still has its own hamburger). */
+@media (min-width: 1080px) {
+  .nav-row--split { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 1.5rem; padding-block: 0.5rem; }
+  .nav-row--split .nav-links--left { justify-self: start; }
+  .nav-row--split .nav-right { justify-self: end; display: flex; align-items: center; gap: 1.75rem; }
+  .brand-mark.brand-mark--center { height: 72px; }
+}
 .brand { display: flex; align-items: center; gap: 0.65rem; }
 .brand-mark {
   display: flex; align-items: center; justify-content: center;
@@ -276,7 +293,7 @@ p { margin: 0; }
 
 .nav-links { display: none; align-items: center; gap: 2rem; font-size: 0.9375rem; font-weight: 600; color: rgba(255,255,255,0.8); }
 @media (min-width: 1080px) { .nav-links { display: flex; } }
-.nav-links a { transition: color 180ms ease; }
+.nav-links a { transition: color 180ms ease; white-space: nowrap; }
 .nav-links a:hover, .nav-links a[aria-current="page"] { color: white; }
 
 .nav-actions { display: flex; align-items: center; gap: 0.75rem; }
