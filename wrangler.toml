@@ -1,0 +1,8 @@
+name = "cubic-smart-llc"
+compatibility_date = "2026-09-28"
+
+# Pure static site, no Worker code — this just tells Cloudflare to serve
+# every file in the repo root (index.html, services.html, src/, assets/, etc.)
+# directly as static assets. No build step, no server-side logic.
+[assets]
+directory = "./"
