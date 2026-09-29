@@ -38,6 +38,11 @@ export const translations = {
     'home.trust.bilingual': 'Bilingual Crews',
     'home.trust.footnote': '*Typical response time within primary service area; may vary by conditions and location.',
 
+    'home.certs.iicrc.title': 'IICRC-Certified Team',
+    'home.certs.iicrc.body': 'Trained and certified to the industry’s recognized inspection, cleaning, and restoration standard.',
+    'home.certs.insurance.title': 'We Work With Your Insurance',
+    'home.certs.insurance.body': 'We document every job to adjuster standards and support your claim from estimate to final walkthrough.',
+
     'home.services.eyebrow': 'What We Handle',
     'home.services.title': 'Restoration Services Built for Emergencies',
     'home.services.subtitle': 'From the first phone call to the final walkthrough, one crew handles mitigation and rebuild — no handoffs, no guesswork.',
@@ -237,6 +242,11 @@ export const translations = {
     'home.trust.experience': 'Años de Experiencia en Construcción',
     'home.trust.bilingual': 'Equipos Bilingües',
     'home.trust.footnote': '*Tiempo de respuesta típico dentro del área principal de servicio; puede variar según condiciones y ubicación.',
+
+    'home.certs.iicrc.title': 'Equipo Certificado por el IICRC',
+    'home.certs.iicrc.body': 'Capacitados y certificados según el estándar reconocido de la industria en inspección, limpieza y restauración.',
+    'home.certs.insurance.title': 'Trabajamos Con Tu Seguro',
+    'home.certs.insurance.body': 'Documentamos cada trabajo según los estándares del ajustador y te apoyamos con tu reclamo, desde la cotización hasta la inspección final.',
 
     'home.services.eyebrow': 'Lo Que Atendemos',
     'home.services.title': 'Servicios de Restauración para Cada Emergencia',

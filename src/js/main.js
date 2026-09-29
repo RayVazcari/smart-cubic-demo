@@ -191,6 +191,68 @@ function initContactForm() {
   });
 }
 
+function initGlassSheen() {
+  const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (!canHover) return;
+
+  document.querySelectorAll('.glass, .card').forEach((el) => {
+    el.addEventListener('mousemove', (e) => {
+      const rect = el.getBoundingClientRect();
+      const px = (e.clientX - rect.left) / rect.width;
+      const py = (e.clientY - rect.top) / rect.height;
+      el.style.setProperty('--px', `${px * 100}%`);
+      el.style.setProperty('--py', `${py * 100}%`);
+      // Capped at 3deg — a considered tilt, not a gimmick.
+      el.style.setProperty('--tilt-x', `${(py - 0.5) * -6}deg`);
+      el.style.setProperty('--tilt-y', `${(px - 0.5) * 6}deg`);
+    });
+    el.addEventListener('mouseleave', () => {
+      el.style.setProperty('--tilt-x', '0deg');
+      el.style.setProperty('--tilt-y', '0deg');
+    });
+  });
+}
+
+function initButtonBloom() {
+  if (prefersReducedMotion) return;
+
+  document.querySelectorAll('.btn-primary').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const bloom = document.createElement('span');
+      bloom.className = 'btn-bloom';
+      bloom.style.left = `${e.clientX - rect.left}px`;
+      bloom.style.top = `${e.clientY - rect.top}px`;
+      btn.appendChild(bloom);
+      bloom.addEventListener('animationend', () => bloom.remove());
+    });
+  });
+}
+
+function initScrollParallax() {
+  if (prefersReducedMotion) return;
+  const fields = document.querySelectorAll('.glow-field');
+  if (!fields.length) return;
+
+  let ticking = false;
+  function update() {
+    fields.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      const progress = rect.top / window.innerHeight;
+      el.style.setProperty('--scroll-shift', `${progress * -30}px`);
+    });
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(update);
+      ticking = true;
+    }
+  }, { passive: true });
+  update();
+}
+
 function setYear() {
   const el = document.querySelector('[data-current-year]');
   if (el) el.textContent = new Date().getFullYear();
@@ -204,5 +266,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initStaggerGroups();
   initCounters();
   initContactForm();
+  initGlassSheen();
+  initButtonBloom();
+  initScrollParallax();
   setYear();
 });

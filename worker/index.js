@@ -1,5 +1,5 @@
 const TO_EMAIL = 'info@cubicsmartllc.com';
-const FROM_EMAIL = 'onboarding@resend.dev'; // swap once a custom domain is verified in Resend
+const FROM_EMAIL = 'leads@info.cubicsmartllc.com';
 
 const ISSUE_LABELS = {
   water: 'Water Damage',

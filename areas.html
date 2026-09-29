@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="src/style.css?v=13" />
+  <link rel="stylesheet" href="src/style.css?v=18" />
   <script type="module" src="src/js/main.js"></script>
 </head>
 <body>
@@ -73,8 +73,9 @@
 
   <main id="main">
     <!-- ============ PAGE HERO ============ -->
-    <section class="section-tight section-dark">
-      <div class="container text-center max-w-lead mx-auto">
+    <section class="section-tight section-dark" style="position:relative; overflow:hidden;">
+      <div class="glow-field"></div>
+      <div class="container text-center max-w-lead mx-auto" style="position:relative;">
         <span class="eyebrow" data-i18n="areas.hero.eyebrow">Service Area</span>
         <h1 class="h1 text-white mt-3" data-i18n="areas.hero.title">Serving San Antonio &amp; Surrounding Communities</h1>
         <p class="lead on-dark mt-3" data-i18n="areas.hero.subtitle">Rapid response coverage across Bexar County and neighboring areas. Don't see your city listed? Call us — we likely still cover it.</p>
@@ -110,7 +111,7 @@
           <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5S5 14.6 5 9.8a7 7 0 1 1 14 0c0 4.8-7 11.7-7 11.7Z"/><circle cx="12" cy="9.8" r="2.4"/></svg>Windcrest</div>
         </div>
 
-        <div class="reveal mt-6" style="border:1px dashed var(--color-line); border-radius:var(--radius); padding:1.5rem; background:var(--color-paper-dim);">
+        <div class="reveal mt-6" style="border:1px dashed rgba(255,255,255,0.25); border-radius:var(--radius); padding:1.5rem; background:rgba(255,255,255,0.04);">
           <h2 class="h3 text-ink" data-i18n="areas.expansion.title">Growing Beyond San Antonio</h2>
           <p class="body-muted mt-2" data-i18n="areas.expansion.body">San Antonio is home base and where we take on jobs today. As we grow, we're planning to expand direct service to Austin, Houston, and Dallas — check back, or call to ask about your specific address.</p>
         </div>
@@ -119,7 +120,7 @@
 
     <!-- ============ CTA ============ -->
     <section class="section section-dark" style="position:relative; overflow:hidden;">
-      <div class="hero-glow" style="background: radial-gradient(50% 60% at 85% 30%, var(--color-navy) 0%, transparent 70%); opacity:0.4;"></div>
+      <div class="glow-field" style="background: radial-gradient(50% 60% at 85% 30%, var(--color-navy) 0%, transparent 70%); opacity:0.4;"></div>
       <div class="container reveal text-center" style="position:relative;">
         <h2 class="h2 text-white" data-i18n="areas.cta.title">Not Sure If We Cover Your Address?</h2>
         <p class="lead on-dark mx-auto max-w-content mt-3" data-i18n="areas.cta.body">Call the emergency line and we'll confirm coverage and dispatch time in minutes.</p>
