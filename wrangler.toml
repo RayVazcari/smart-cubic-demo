@@ -8,3 +8,12 @@ main = "worker/index.js"
 [assets]
 directory = "./"
 binding = "ASSETS"
+
+# Declared here (not just in the dashboard) so a git-triggered deploy never
+# silently drops it — that's exactly what caused the contact form's earlier
+# "missing/invalid API key" saga. The secret's actual value lives in
+# Cloudflare's Secrets Store, referenced by store_id below, never in this file.
+[[secrets_store_secrets]]
+binding = "RESEND_API_KEY"
+store_id = "a78d379c25f24200a91165348c46eb90"
+secret_name = "RESEND_API_KEY"
