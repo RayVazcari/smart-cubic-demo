@@ -1,6 +1,6 @@
-# Smart Cubic Water Mitigation and Restoration
+# Cubic Smart Innovation LLC
 
-A bilingual (English/Spanish) marketing site built for a water mitigation and restoration company in San Antonio, TX.
+A bilingual (English/Spanish) marketing site built for a multi-division general contractor (construction, roofing, restoration, and water mitigation) in San Antonio, TX.
 
 **Live demo:** https://rayvazcari.github.io/smart-cubic-demo/
 
@@ -29,4 +29,4 @@ HTML5, CSS3 (custom properties, Grid/Flexbox), vanilla JavaScript (ES modules) â
 
 ## License
 
-No license is granted. This repository is shared publicly for portfolio/demonstration purposes only. The business name, logo, and copy belong to Smart Cubic Water Mitigation and Restoration and may not be reused.
+No license is granted. This repository is shared publicly for portfolio/demonstration purposes only. The business name, logo, and copy belong to Cubic Smart Innovation LLC and may not be reused.
