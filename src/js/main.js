@@ -143,9 +143,10 @@ function initContactForm() {
   if (!form) return;
 
   const successPanel = document.querySelector('[data-form-success]');
+  const errorPanel = document.querySelector('[data-form-error]');
   const submitBtn = form.querySelector('[type="submit"]');
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (!form.checkValidity()) {
       form.reportValidity();
@@ -156,19 +157,30 @@ function initContactForm() {
     submitBtn.disabled = true;
     submitBtn.style.opacity = '0.7';
     submitBtn.style.cursor = 'wait';
+    errorPanel?.classList.add('hidden');
 
-    // No backend is wired up yet — this is the integration point for the future
-    // lead-capture pipeline (CRM write + calendar event + AI phone-bot handoff).
-    // Simulated delay only; nothing is transmitted.
-    window.setTimeout(() => {
+    const payload = Object.fromEntries(new FormData(form).entries());
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error('Request failed');
+
+      form.classList.add('hidden');
+      successPanel?.classList.remove('hidden');
+      successPanel?.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'center' });
+    } catch (err) {
+      errorPanel?.classList.remove('hidden');
+      errorPanel?.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'center' });
+    } finally {
       submitBtn.disabled = false;
       submitBtn.style.opacity = '';
       submitBtn.style.cursor = '';
       submitBtn.textContent = originalLabel;
-      form.classList.add('hidden');
-      successPanel?.classList.remove('hidden');
-      successPanel?.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'center' });
-    }, 700);
+    }
   });
 
   const resetBtn = document.querySelector('[data-form-reset]');
