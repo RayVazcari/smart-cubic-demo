@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="src/style.css?v=19" />
+  <link rel="stylesheet" href="src/style.css?v=22" />
   <script type="module" src="src/js/main.js"></script>
 </head>
 <body>
@@ -73,13 +73,33 @@
 
   <main id="main">
     <!-- ============ PAGE HERO ============ -->
-    <section class="section-tight section-dark" style="position:relative; overflow:hidden;">
+    <section class="section-dark" style="position:relative; overflow:hidden;">
       <div class="glow-field" style="background: radial-gradient(55% 60% at 85% 15%, var(--color-navy) 0%, transparent 70%); opacity:0.5;"></div>
-      <div class="container text-center max-w-lead mx-auto" style="position:relative;">
-        <span class="eyebrow" data-i18n="about.hero.eyebrow">Our Story</span>
-        <h1 class="h1 text-white mt-3" data-i18n="about.hero.title">Built by Someone Who's Run the Job Site, Not Just the Office</h1>
-        <p class="eyebrow mt-2" style="justify-content:center;" data-i18n="about.hero.byline">Ray Rizo — Founder</p>
-        <p class="lead on-dark mt-3" data-i18n="about.hero.subtitle">Cubic Smart was founded on a simple standard: treat every property like it's your own family's home.</p>
+      <div class="container hero-grid" style="position:relative;">
+        <div>
+          <span class="eyebrow hero-anim hero-anim--1" data-i18n="about.hero.eyebrow">Our Story</span>
+          <h1 class="h1 text-white mt-3 hero-anim hero-anim--2" data-i18n="about.hero.title">Built by Someone Who's Run the Job Site, Not Just the Office</h1>
+          <p class="eyebrow mt-3 hero-anim hero-anim--3" data-i18n="about.hero.byline">Ray Rizo — Founder</p>
+          <p class="lead on-dark max-w-content mt-3 hero-anim hero-anim--4" data-i18n="about.hero.subtitle">Cubic Smart was founded on a simple standard: treat every property like it's your own family's home.</p>
+        </div>
+        <figure class="portrait hero-anim hero-anim--5">
+          <div class="portrait-media">
+            <img src="assets/people/ray-rizo-portrait.webp" alt="Ray Rizo, founder of Cubic Smart Innovation LLC, reviewing plans on a job site" width="1086" height="724" fetchpriority="high" />
+          </div>
+          <figcaption class="portrait-caption">
+            <strong>Ray Rizo</strong>
+            <span data-i18n="about.certs.c2">Civil Engineer &amp; Builder Since 1992</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ ON SITE ============ -->
+    <section class="section-tight">
+      <div class="container">
+        <figure class="photo-band reveal">
+          <img src="assets/people/ray-rizo-on-site.webp" alt="Ray Rizo walking a construction site and pointing ahead, with two other people in hard hats" width="1400" height="933" loading="lazy" />
+        </figure>
       </div>
     </section>
 
