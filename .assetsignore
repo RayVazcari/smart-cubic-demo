@@ -1,2 +1,7 @@
 .git
 .wrangler
+.assetsignore
+wrangler.toml
+worker/
+README.md
+assets/banner.svg
